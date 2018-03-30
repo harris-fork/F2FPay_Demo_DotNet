@@ -149,7 +149,6 @@ namespace Aop.Api
 
         #endregion
 
-        #region IAopClient Members
         /// <summary>
         /// 执行AOP公开API请求。
         /// </summary>
@@ -173,8 +172,7 @@ namespace Aop.Api
             return Execute<T>(request, accessToken, null);
 
         }
-        #endregion
-        #region IAopClient Members
+
         /// <summary>
         /// 执行AOP公开API请求。
         /// </summary>
@@ -298,9 +296,7 @@ namespace Aop.Api
             // CheckResponseSign(request, rsp, parser, this.alipayPublicKey, this.charset);
             return rsp;
         }
-        #endregion
 
-        #region IAopClient Members
         /// <summary>
         /// 执行AOP隐私API请求。
         /// </summary>
@@ -527,8 +523,7 @@ namespace Aop.Api
             }
         }
 
-        #endregion
-        #region IAopClient Members
+
         public string BuildHtmlRequest(IDictionary<string, string> sParaTemp, string strMethod, string strButtonValue)
         {
             //待请求参数数组
@@ -557,8 +552,8 @@ namespace Aop.Api
 
             return sbHtml.ToString();
         }
-        #endregion
-        #region IAopClient Members
+
+
         public Dictionary<string, string> FilterPara(SortedDictionary<string, string> dicArrayPre)
         {
             Dictionary<string, string> dicArray = new Dictionary<string, string>();
@@ -588,9 +583,7 @@ namespace Aop.Api
 
             return prestr.ToString();
         }
-        #endregion
 
-        #region SDK Execute
 
         /// <summary>
         /// 执行AOP公开API请求。
@@ -623,9 +616,6 @@ namespace Aop.Api
             return rsp;
         }
 
-        #endregion
-
-        #region Common Method
 
         private AopDictionary buildRequestParams<T>(IAopRequest<T> request, String accessToken, String appAuthToken) where T : AopResponse
         {
@@ -681,9 +671,7 @@ namespace Aop.Api
             return result;
         }
 
-        #endregion
 
-        #region Model Serialize
 
         /// <summary>
         ///
@@ -705,6 +693,6 @@ namespace Aop.Api
             return result;
         }
 
-        #endregion
+
     }
 }
