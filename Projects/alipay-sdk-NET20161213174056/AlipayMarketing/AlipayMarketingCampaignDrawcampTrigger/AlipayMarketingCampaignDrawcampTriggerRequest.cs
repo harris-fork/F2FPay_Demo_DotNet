@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.marketing.campaign.drawcamp.trigger
+    /// alipay.marketing.campaign.drawcamp.trigger
+    /// 营销抽奖活动触发
     /// </summary>
-    public class AlipayMarketingCampaignDrawcampTriggerRequest : IAopRequest<AlipayMarketingCampaignDrawcampTriggerResponse>
+    public class AlipayMarketingCampaignDrawcampTriggerRequest : BizAopRequest<AlipayMarketingCampaignDrawcampTriggerResponse>
     {
-        /// <summary>
-        /// 营销抽奖活动触发
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

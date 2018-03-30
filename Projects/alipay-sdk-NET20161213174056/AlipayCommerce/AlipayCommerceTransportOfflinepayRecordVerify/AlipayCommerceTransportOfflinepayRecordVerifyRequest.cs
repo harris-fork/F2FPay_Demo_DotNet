@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.transport.offlinepay.record.verify
+    /// alipay.commerce.transport.offlinepay.record.verify
+    /// 支付宝脱机操作信息验证
     /// </summary>
-    public class AlipayCommerceTransportOfflinepayRecordVerifyRequest : IAopRequest<AlipayCommerceTransportOfflinepayRecordVerifyResponse>
+    public class AlipayCommerceTransportOfflinepayRecordVerifyRequest : BizAopRequest<AlipayCommerceTransportOfflinepayRecordVerifyResponse>
     {
-        /// <summary>
-        /// 支付宝脱机操作信息验证
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.data.dataservice.code.reco
+    /// alipay.data.dataservice.code.reco
+    /// 改api为数立提供验证码识别服务。isv可以通过该接口，使用我们的图片识别能力。
     /// </summary>
-    public class AlipayDataDataserviceCodeRecoRequest : IAopRequest<AlipayDataDataserviceCodeRecoResponse>
+    public class AlipayDataDataserviceCodeRecoRequest : BizAopRequest<AlipayDataDataserviceCodeRecoResponse>
     {
-        /// <summary>
-        /// 改api为数立提供验证码识别服务。isv可以通过该接口，使用我们的图片识别能力。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

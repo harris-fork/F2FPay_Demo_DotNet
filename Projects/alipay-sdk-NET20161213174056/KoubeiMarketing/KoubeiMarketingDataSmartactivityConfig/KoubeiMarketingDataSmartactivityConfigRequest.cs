@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.marketing.data.smartactivity.config
+    /// koubei.marketing.data.smartactivity.config
+    /// 商户智能活动配置方案接口
     /// </summary>
-    public class KoubeiMarketingDataSmartactivityConfigRequest : IAopRequest<KoubeiMarketingDataSmartactivityConfigResponse>
+    public class KoubeiMarketingDataSmartactivityConfigRequest : BizAopRequest<KoubeiMarketingDataSmartactivityConfigResponse>
     {
-        /// <summary>
-        /// 商户智能活动配置方案接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

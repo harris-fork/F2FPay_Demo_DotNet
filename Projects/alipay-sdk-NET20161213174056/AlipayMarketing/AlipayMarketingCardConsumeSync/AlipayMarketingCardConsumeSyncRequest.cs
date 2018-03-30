@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.marketing.card.consume.sync
+    /// alipay.marketing.card.consume.sync
+    /// 会员卡消费记录同步
     /// </summary>
-    public class AlipayMarketingCardConsumeSyncRequest : IAopRequest<AlipayMarketingCardConsumeSyncResponse>
+    public class AlipayMarketingCardConsumeSyncRequest : BizAopRequest<AlipayMarketingCardConsumeSyncResponse>
     {
-        /// <summary>
-        /// 会员卡消费记录同步
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.account.exrate.allclientrate.query
+    /// alipay.account.exrate.allclientrate.query
+    /// 查询客户的所有币种对最新有效汇率
     /// </summary>
-    public class AlipayAccountExrateAllclientrateQueryRequest : IAopRequest<AlipayAccountExrateAllclientrateQueryResponse>
+    public class AlipayAccountExrateAllclientrateQueryRequest : BizAopRequest<AlipayAccountExrateAllclientrateQueryResponse>
     {
-        /// <summary>
-        /// 查询客户的所有币种对最新有效汇率
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

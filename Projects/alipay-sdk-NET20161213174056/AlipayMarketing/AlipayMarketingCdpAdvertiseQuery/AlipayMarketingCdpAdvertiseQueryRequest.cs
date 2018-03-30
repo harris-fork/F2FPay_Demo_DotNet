@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.marketing.cdp.advertise.query
+    /// alipay.marketing.cdp.advertise.query
+    /// 提供给ISV和开发者查询广告的接口
     /// </summary>
-    public class AlipayMarketingCdpAdvertiseQueryRequest : IAopRequest<AlipayMarketingCdpAdvertiseQueryResponse>
+    public class AlipayMarketingCdpAdvertiseQueryRequest : BizAopRequest<AlipayMarketingCdpAdvertiseQueryResponse>
     {
-        /// <summary>
-        /// 提供给ISV和开发者查询广告的接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.pcredit.huabei.promo.query
+    /// alipay.pcredit.huabei.promo.query
+    /// 入参大字段
     /// </summary>
-    public class AlipayPcreditHuabeiPromoQueryRequest : IAopRequest<AlipayPcreditHuabeiPromoQueryResponse>
+    public class AlipayPcreditHuabeiPromoQueryRequest : BizAopRequest<AlipayPcreditHuabeiPromoQueryResponse>
     {
-        /// <summary>
-        /// 入参大字段
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

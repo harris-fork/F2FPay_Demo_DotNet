@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.partner.subscribe.sync
+    /// alipay.open.public.partner.subscribe.sync
+    /// 用于为服务窗合作伙伴（如YunOS），提供订阅关系（关注与取消关注）同步功能
     /// </summary>
-    public class AlipayOpenPublicPartnerSubscribeSyncRequest : IAopRequest<AlipayOpenPublicPartnerSubscribeSyncResponse>
+    public class AlipayOpenPublicPartnerSubscribeSyncRequest : BizAopRequest<AlipayOpenPublicPartnerSubscribeSyncResponse>
     {
-        /// <summary>
-        /// 用于为服务窗合作伙伴（如YunOS），提供订阅关系（关注与取消关注）同步功能
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

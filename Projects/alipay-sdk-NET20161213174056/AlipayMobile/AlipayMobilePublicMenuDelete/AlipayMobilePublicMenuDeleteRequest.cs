@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.menu.delete
+    /// alipay.mobile.public.menu.delete
+    /// 菜单唯一标识
     /// </summary>
-    public class AlipayMobilePublicMenuDeleteRequest : IAopRequest<AlipayMobilePublicMenuDeleteResponse>
+    public class AlipayMobilePublicMenuDeleteRequest : BizAopRequest<AlipayMobilePublicMenuDeleteResponse>
     {
-        /// <summary>
-        /// 菜单唯一标识
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

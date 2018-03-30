@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.marketing.data.customreport.batchquery
+    /// koubei.marketing.data.customreport.batchquery
+    /// 自定义数据报表列表分页查询接口
     /// </summary>
-    public class KoubeiMarketingDataCustomreportBatchqueryRequest : IAopRequest<KoubeiMarketingDataCustomreportBatchqueryResponse>
+    public class KoubeiMarketingDataCustomreportBatchqueryRequest : BizAopRequest<KoubeiMarketingDataCustomreportBatchqueryResponse>
     {
-        /// <summary>
-        /// 自定义数据报表列表分页查询接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

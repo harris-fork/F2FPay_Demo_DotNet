@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.cplife.bill.batch.upload
+    /// alipay.eco.cplife.bill.batch.upload
+    /// 物业费账单数据批量上传
     /// </summary>
-    public class AlipayEcoCplifeBillBatchUploadRequest : IAopRequest<AlipayEcoCplifeBillBatchUploadResponse>
+    public class AlipayEcoCplifeBillBatchUploadRequest : BizAopRequest<AlipayEcoCplifeBillBatchUploadResponse>
     {
-        /// <summary>
-        /// 物业费账单数据批量上传
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

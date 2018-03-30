@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.leads.batchquery
+    /// alipay.offline.market.leads.batchquery
+    /// 通过该接口多组合条件查询口碑线下Leads信息
     /// </summary>
-    public class AlipayOfflineMarketLeadsBatchqueryRequest : IAopRequest<AlipayOfflineMarketLeadsBatchqueryResponse>
+    public class AlipayOfflineMarketLeadsBatchqueryRequest : BizAopRequest<AlipayOfflineMarketLeadsBatchqueryResponse>
     {
-        /// <summary>
-        /// 通过该接口多组合条件查询口碑线下Leads信息
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.qrcode.create
+    /// alipay.open.public.qrcode.create
+    /// createQrCodeProcessor
     /// </summary>
-    public class AlipayOpenPublicQrcodeCreateRequest : IAopRequest<AlipayOpenPublicQrcodeCreateResponse>
+    public class AlipayOpenPublicQrcodeCreateRequest : BizAopRequest<AlipayOpenPublicQrcodeCreateResponse>
     {
-        /// <summary>
-        /// createQrCodeProcessor
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

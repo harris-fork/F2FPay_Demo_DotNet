@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.shop.discount.query
+    /// alipay.offline.market.shop.discount.query
+    /// 基于门店id的优惠查询服务
     /// </summary>
-    public class AlipayOfflineMarketShopDiscountQueryRequest : IAopRequest<AlipayOfflineMarketShopDiscountQueryResponse>
+    public class AlipayOfflineMarketShopDiscountQueryRequest : BizAopRequest<AlipayOfflineMarketShopDiscountQueryResponse>
     {
-        /// <summary>
-        /// 基于门店id的优惠查询服务
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

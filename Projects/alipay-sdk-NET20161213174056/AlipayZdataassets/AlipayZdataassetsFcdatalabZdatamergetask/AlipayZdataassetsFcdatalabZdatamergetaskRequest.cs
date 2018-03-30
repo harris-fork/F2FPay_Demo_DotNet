@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.zdataassets.fcdatalab.zdatamergetask
+    /// alipay.zdataassets.fcdatalab.zdatamergetask
+    /// 业务参数
     /// </summary>
-    public class AlipayZdataassetsFcdatalabZdatamergetaskRequest : IAopRequest<AlipayZdataassetsFcdatalabZdatamergetaskResponse>
+    public class AlipayZdataassetsFcdatalabZdatamergetaskRequest : BizAopRequest<AlipayZdataassetsFcdatalabZdatamergetaskResponse>
     {
-        /// <summary>
-        /// 业务参数
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

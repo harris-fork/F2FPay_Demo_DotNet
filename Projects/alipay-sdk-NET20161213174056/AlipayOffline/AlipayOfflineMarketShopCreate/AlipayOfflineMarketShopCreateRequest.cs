@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.shop.create
+    /// alipay.offline.market.shop.create
+    /// 系统商需要通过该接口在口碑平台帮助商户创建门店信息。
     /// </summary>
-    public class AlipayOfflineMarketShopCreateRequest : IAopRequest<AlipayOfflineMarketShopCreateResponse>
+    public class AlipayOfflineMarketShopCreateRequest : BizAopRequest<AlipayOfflineMarketShopCreateResponse>
     {
-        /// <summary>
-        /// 系统商需要通过该接口在口碑平台帮助商户创建门店信息。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.item.state
+    /// koubei.item.state
+    /// 商品操作接口
     /// </summary>
-    public class KoubeiItemStateRequest : IAopRequest<KoubeiItemStateResponse>
+    public class KoubeiItemStateRequest : BizAopRequest<KoubeiItemStateResponse>
     {
-        /// <summary>
-        /// 商品操作接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

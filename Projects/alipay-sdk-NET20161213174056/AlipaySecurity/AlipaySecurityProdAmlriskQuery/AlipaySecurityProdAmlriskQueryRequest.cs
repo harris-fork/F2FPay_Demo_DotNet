@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.security.prod.amlrisk.query
+    /// alipay.security.prod.amlrisk.query
+    /// 该API用于外部商户准入时的反洗钱风险分析。
     /// </summary>
-    public class AlipaySecurityProdAmlriskQueryRequest : IAopRequest<AlipaySecurityProdAmlriskQueryResponse>
+    public class AlipaySecurityProdAmlriskQueryRequest : BizAopRequest<AlipaySecurityProdAmlriskQueryResponse>
     {
-        /// <summary>
-        /// 该API用于外部商户准入时的反洗钱风险分析。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

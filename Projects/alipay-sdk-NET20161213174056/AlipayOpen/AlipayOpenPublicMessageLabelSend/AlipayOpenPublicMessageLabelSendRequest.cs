@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.message.label.send
+    /// alipay.open.public.message.label.send
+    /// 根据标签组发消息接口
     /// </summary>
-    public class AlipayOpenPublicMessageLabelSendRequest : IAopRequest<AlipayOpenPublicMessageLabelSendResponse>
+    public class AlipayOpenPublicMessageLabelSendRequest : BizAopRequest<AlipayOpenPublicMessageLabelSendResponse>
     {
-        /// <summary>
-        /// 根据标签组发消息接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

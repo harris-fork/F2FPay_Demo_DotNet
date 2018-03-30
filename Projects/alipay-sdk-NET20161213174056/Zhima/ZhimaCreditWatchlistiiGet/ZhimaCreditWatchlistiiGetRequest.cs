@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: zhima.credit.watchlistii.get
+    /// zhima.credit.watchlistii.get
+    /// 行业关注名单
     /// </summary>
-    public class ZhimaCreditWatchlistiiGetRequest : IAopRequest<ZhimaCreditWatchlistiiGetResponse>
+    public class ZhimaCreditWatchlistiiGetRequest : BizAopRequest<ZhimaCreditWatchlistiiGetResponse>
     {
-        /// <summary>
-        /// 行业关注名单
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

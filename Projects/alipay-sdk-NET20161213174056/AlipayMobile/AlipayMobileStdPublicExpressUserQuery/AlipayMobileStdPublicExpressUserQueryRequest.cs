@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.std.public.express.user.query
+    /// alipay.mobile.std.public.express.user.query
+    /// 查询请求，用户id
     /// </summary>
-    public class AlipayMobileStdPublicExpressUserQueryRequest : IAopRequest<AlipayMobileStdPublicExpressUserQueryResponse>
+    public class AlipayMobileStdPublicExpressUserQueryRequest : BizAopRequest<AlipayMobileStdPublicExpressUserQueryResponse>
     {
-        /// <summary>
-        /// 查询请求，用户id
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

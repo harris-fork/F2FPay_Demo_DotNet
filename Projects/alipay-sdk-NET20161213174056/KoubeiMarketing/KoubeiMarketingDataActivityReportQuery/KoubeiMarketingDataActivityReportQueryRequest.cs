@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.marketing.data.activity.report.query
+    /// koubei.marketing.data.activity.report.query
+    /// 口碑商户营销报表查询
     /// </summary>
-    public class KoubeiMarketingDataActivityReportQueryRequest : IAopRequest<KoubeiMarketingDataActivityReportQueryResponse>
+    public class KoubeiMarketingDataActivityReportQueryRequest : BizAopRequest<KoubeiMarketingDataActivityReportQueryResponse>
     {
-        /// <summary>
-        /// 口碑商户营销报表查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

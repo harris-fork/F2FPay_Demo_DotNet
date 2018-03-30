@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.label.create
+    /// alipay.open.public.label.create
+    /// 公众号标签管理-添加标签
     /// </summary>
-    public class AlipayOpenPublicLabelCreateRequest : IAopRequest<AlipayOpenPublicLabelCreateResponse>
+    public class AlipayOpenPublicLabelCreateRequest : BizAopRequest<AlipayOpenPublicLabelCreateResponse>
     {
-        /// <summary>
-        /// 公众号标签管理-添加标签
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.marketing.campaign.activity.modify
+    /// koubei.marketing.campaign.activity.modify
+    /// 活动修改接口
     /// </summary>
-    public class KoubeiMarketingCampaignActivityModifyRequest : IAopRequest<KoubeiMarketingCampaignActivityModifyResponse>
+    public class KoubeiMarketingCampaignActivityModifyRequest : BizAopRequest<KoubeiMarketingCampaignActivityModifyResponse>
     {
-        /// <summary>
-        /// 活动修改接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.data.dataexchange.sfasdf
+    /// alipay.data.dataexchange.sfasdf
+    /// 1232456374
     /// </summary>
-    public class AlipayDataDataexchangeSfasdfRequest : IAopRequest<AlipayDataDataexchangeSfasdfResponse>
+    public class AlipayDataDataexchangeSfasdfRequest : BizAopRequest<AlipayDataDataexchangeSfasdfResponse>
     {
-        /// <summary>
-        /// 1232456374
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

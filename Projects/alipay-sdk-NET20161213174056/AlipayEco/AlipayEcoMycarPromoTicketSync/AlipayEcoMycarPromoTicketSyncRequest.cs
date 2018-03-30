@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.mycar.promo.ticket.sync
+    /// alipay.eco.mycar.promo.ticket.sync
+    /// ISV有新的卡券信息同步到车主服务平台
     /// </summary>
-    public class AlipayEcoMycarPromoTicketSyncRequest : IAopRequest<AlipayEcoMycarPromoTicketSyncResponse>
+    public class AlipayEcoMycarPromoTicketSyncRequest : BizAopRequest<AlipayEcoMycarPromoTicketSyncResponse>
     {
-        /// <summary>
-        /// ISV有新的卡券信息同步到车主服务平台
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

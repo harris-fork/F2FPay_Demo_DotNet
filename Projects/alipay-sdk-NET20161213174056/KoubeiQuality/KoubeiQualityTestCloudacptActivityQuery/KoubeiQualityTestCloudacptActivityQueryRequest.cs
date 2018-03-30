@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.quality.test.cloudacpt.activity.query
+    /// koubei.quality.test.cloudacpt.activity.query
+    /// 云验收活动列表查询
     /// </summary>
-    public class KoubeiQualityTestCloudacptActivityQueryRequest : IAopRequest<KoubeiQualityTestCloudacptActivityQueryResponse>
+    public class KoubeiQualityTestCloudacptActivityQueryRequest : BizAopRequest<KoubeiQualityTestCloudacptActivityQueryResponse>
     {
-        /// <summary>
-        /// 云验收活动列表查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

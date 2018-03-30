@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.medical.card.query
+    /// alipay.commerce.medical.card.query
+    /// 医疗机构根据用户userId查询该账户的医保卡相关信息
     /// </summary>
-    public class AlipayCommerceMedicalCardQueryRequest : IAopRequest<AlipayCommerceMedicalCardQueryResponse>
+    public class AlipayCommerceMedicalCardQueryRequest : BizAopRequest<AlipayCommerceMedicalCardQueryResponse>
     {
-        /// <summary>
-        /// 医疗机构根据用户userId查询该账户的医保卡相关信息
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.user.account.userid.batchquery
+    /// alipay.user.account.userid.batchquery
+    /// 业务统一入参，目前会传入用户的手机号作为查询参数
     /// </summary>
-    public class AlipayUserAccountUseridBatchqueryRequest : IAopRequest<AlipayUserAccountUseridBatchqueryResponse>
+    public class AlipayUserAccountUseridBatchqueryRequest : BizAopRequest<AlipayUserAccountUseridBatchqueryResponse>
     {
-        /// <summary>
-        /// 业务统一入参，目前会传入用户的手机号作为查询参数
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

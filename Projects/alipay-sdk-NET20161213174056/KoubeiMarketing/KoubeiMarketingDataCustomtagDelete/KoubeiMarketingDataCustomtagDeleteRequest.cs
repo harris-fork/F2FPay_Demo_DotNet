@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.marketing.data.customtag.delete
+    /// koubei.marketing.data.customtag.delete
+    /// 自定义标签删除接口
     /// </summary>
-    public class KoubeiMarketingDataCustomtagDeleteRequest : IAopRequest<KoubeiMarketingDataCustomtagDeleteResponse>
+    public class KoubeiMarketingDataCustomtagDeleteRequest : BizAopRequest<KoubeiMarketingDataCustomtagDeleteResponse>
     {
-        /// <summary>
-        /// 自定义标签删除接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

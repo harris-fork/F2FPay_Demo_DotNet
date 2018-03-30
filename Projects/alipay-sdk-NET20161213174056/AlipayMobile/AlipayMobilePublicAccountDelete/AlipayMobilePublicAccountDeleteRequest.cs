@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.account.delete
+    /// alipay.mobile.public.account.delete
+    /// 协议号等相关参数
     /// </summary>
-    public class AlipayMobilePublicAccountDeleteRequest : IAopRequest<AlipayMobilePublicAccountDeleteResponse>
+    public class AlipayMobilePublicAccountDeleteRequest : BizAopRequest<AlipayMobilePublicAccountDeleteResponse>
     {
-        /// <summary>
-        /// 协议号等相关参数
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

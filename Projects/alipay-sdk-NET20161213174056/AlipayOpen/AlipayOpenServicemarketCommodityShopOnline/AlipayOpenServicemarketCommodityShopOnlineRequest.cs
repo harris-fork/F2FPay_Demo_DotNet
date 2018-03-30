@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.servicemarket.commodity.shop.online
+    /// alipay.open.servicemarket.commodity.shop.online
+    /// 门店上架处理
     /// </summary>
-    public class AlipayOpenServicemarketCommodityShopOnlineRequest : IAopRequest<AlipayOpenServicemarketCommodityShopOnlineResponse>
+    public class AlipayOpenServicemarketCommodityShopOnlineRequest : BizAopRequest<AlipayOpenServicemarketCommodityShopOnlineResponse>
     {
-        /// <summary>
-        /// 门店上架处理
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

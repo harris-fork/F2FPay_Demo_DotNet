@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trade.vendorpay.devicedata.upload
+    /// alipay.trade.vendorpay.devicedata.upload
+    /// 厂商支付授权时上传设备数据接口，目前主要包含三星支付。com
     /// </summary>
-    public class AlipayTradeVendorpayDevicedataUploadRequest : IAopRequest<AlipayTradeVendorpayDevicedataUploadResponse>
+    public class AlipayTradeVendorpayDevicedataUploadRequest : BizAopRequest<AlipayTradeVendorpayDevicedataUploadResponse>
     {
-        /// <summary>
-        /// 厂商支付授权时上传设备数据接口，目前主要包含三星支付。com
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

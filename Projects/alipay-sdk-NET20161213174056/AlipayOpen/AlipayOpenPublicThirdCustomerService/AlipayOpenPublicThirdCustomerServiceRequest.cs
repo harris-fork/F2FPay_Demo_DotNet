@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.third.customer.service
+    /// alipay.open.public.third.customer.service
+    /// 服务窗第三方渠道商配置接口，用于记录服务窗商户授权的第三方渠道商
     /// </summary>
-    public class AlipayOpenPublicThirdCustomerServiceRequest : IAopRequest<AlipayOpenPublicThirdCustomerServiceResponse>
+    public class AlipayOpenPublicThirdCustomerServiceRequest : BizAopRequest<AlipayOpenPublicThirdCustomerServiceResponse>
     {
-        /// <summary>
-        /// 服务窗第三方渠道商配置接口，用于记录服务窗商户授权的第三方渠道商
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

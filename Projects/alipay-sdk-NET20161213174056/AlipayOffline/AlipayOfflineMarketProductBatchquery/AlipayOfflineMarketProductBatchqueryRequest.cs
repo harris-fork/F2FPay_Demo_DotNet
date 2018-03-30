@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.product.batchquery
+    /// alipay.offline.market.product.batchquery
+    /// 通过该接口可以查询商户录入的所有商品编号
     /// </summary>
-    public class AlipayOfflineMarketProductBatchqueryRequest : IAopRequest<AlipayOfflineMarketProductBatchqueryResponse>
+    public class AlipayOfflineMarketProductBatchqueryRequest : BizAopRequest<AlipayOfflineMarketProductBatchqueryResponse>
     {
-        /// <summary>
-        /// 通过该接口可以查询商户录入的所有商品编号
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

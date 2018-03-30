@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.mycar.data.external.query
+    /// alipay.eco.mycar.data.external.query
+    /// 行业平台外部查询请求
     /// </summary>
-    public class AlipayEcoMycarDataExternalQueryRequest : IAopRequest<AlipayEcoMycarDataExternalQueryResponse>
+    public class AlipayEcoMycarDataExternalQueryRequest : BizAopRequest<AlipayEcoMycarDataExternalQueryResponse>
     {
-        /// <summary>
-        /// 行业平台外部查询请求
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

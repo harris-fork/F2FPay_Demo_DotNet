@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.message.total.send
+    /// alipay.mobile.public.message.total.send
+    /// 业务内容，其中包括消息类型msgType和消息体两部分，具体参见“表1-2 服务窗群发消息的biz_content参数说明”。
     /// </summary>
-    public class AlipayMobilePublicMessageTotalSendRequest : IAopRequest<AlipayMobilePublicMessageTotalSendResponse>
+    public class AlipayMobilePublicMessageTotalSendRequest : BizAopRequest<AlipayMobilePublicMessageTotalSendResponse>
     {
-        /// <summary>
-        /// 业务内容，其中包括消息类型msgType和消息体两部分，具体参见“表1-2 服务窗群发消息的biz_content参数说明”。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

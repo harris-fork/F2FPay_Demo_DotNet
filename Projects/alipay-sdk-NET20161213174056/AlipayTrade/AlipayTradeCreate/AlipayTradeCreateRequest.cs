@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trade.create
+    /// alipay.trade.create
+    /// 商户通过该接口进行交易的创建下单
     /// </summary>
-    public class AlipayTradeCreateRequest : IAopRequest<AlipayTradeCreateResponse>
+    public class AlipayTradeCreateRequest : BizAopRequest<AlipayTradeCreateResponse>
     {
-        /// <summary>
-        /// 商户通过该接口进行交易的创建下单
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

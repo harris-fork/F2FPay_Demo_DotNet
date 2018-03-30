@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.mycar.promo.voucher.verify
+    /// alipay.eco.mycar.promo.voucher.verify
+    /// 核销
     /// </summary>
-    public class AlipayEcoMycarPromoVoucherVerifyRequest : IAopRequest<AlipayEcoMycarPromoVoucherVerifyResponse>
+    public class AlipayEcoMycarPromoVoucherVerifyRequest : BizAopRequest<AlipayEcoMycarPromoVoucherVerifyResponse>
     {
-        /// <summary>
-        /// 核销
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

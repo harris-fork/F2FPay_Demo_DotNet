@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.follow.batchquery
+    /// alipay.open.public.follow.batchquery
+    /// 获取关注者列表
     /// </summary>
-    public class AlipayOpenPublicFollowBatchqueryRequest : IAopRequest<AlipayOpenPublicFollowBatchqueryResponse>
+    public class AlipayOpenPublicFollowBatchqueryRequest : BizAopRequest<AlipayOpenPublicFollowBatchqueryResponse>
     {
-        /// <summary>
-        /// 获取关注者列表
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

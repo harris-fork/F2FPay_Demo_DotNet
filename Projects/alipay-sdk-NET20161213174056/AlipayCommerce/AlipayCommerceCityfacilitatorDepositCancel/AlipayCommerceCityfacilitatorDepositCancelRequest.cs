@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.cityfacilitator.deposit.cancel
+    /// alipay.commerce.cityfacilitator.deposit.cancel
+    /// 合作渠道可通过该接口补登扣款取消请求，以帮助支付宝将用户的资金退给用户
     /// </summary>
-    public class AlipayCommerceCityfacilitatorDepositCancelRequest : IAopRequest<AlipayCommerceCityfacilitatorDepositCancelResponse>
+    public class AlipayCommerceCityfacilitatorDepositCancelRequest : BizAopRequest<AlipayCommerceCityfacilitatorDepositCancelResponse>
     {
-        /// <summary>
-        /// 合作渠道可通过该接口补登扣款取消请求，以帮助支付宝将用户的资金退给用户
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.life.msg.recall
+    /// alipay.open.public.life.msg.recall
+    /// 生活号消息撤回接口
     /// </summary>
-    public class AlipayOpenPublicLifeMsgRecallRequest : IAopRequest<AlipayOpenPublicLifeMsgRecallResponse>
+    public class AlipayOpenPublicLifeMsgRecallRequest : BizAopRequest<AlipayOpenPublicLifeMsgRecallResponse>
     {
-        /// <summary>
-        /// 生活号消息撤回接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

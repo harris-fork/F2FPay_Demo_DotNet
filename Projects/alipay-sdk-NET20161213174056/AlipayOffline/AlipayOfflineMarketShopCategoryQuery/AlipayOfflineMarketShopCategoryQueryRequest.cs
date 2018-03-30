@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.shop.category.query
+    /// alipay.offline.market.shop.category.query
+    /// 门店类目配置查询接口
     /// </summary>
-    public class AlipayOfflineMarketShopCategoryQueryRequest : IAopRequest<AlipayOfflineMarketShopCategoryQueryResponse>
+    public class AlipayOfflineMarketShopCategoryQueryRequest : BizAopRequest<AlipayOfflineMarketShopCategoryQueryResponse>
     {
-        /// <summary>
-        /// 门店类目配置查询接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.msaas.promotion.cpainfo.create
+    /// alipay.msaas.promotion.cpainfo.create
+    /// 此api为了让第三方渠道端调用 ，记录他们的调用数据，然后根据数据比对进行计费功能
     /// </summary>
-    public class AlipayMsaasPromotionCpainfoCreateRequest : IAopRequest<AlipayMsaasPromotionCpainfoCreateResponse>
+    public class AlipayMsaasPromotionCpainfoCreateRequest : BizAopRequest<AlipayMsaasPromotionCpainfoCreateResponse>
     {
-        /// <summary>
-        /// 此api为了让第三方渠道端调用 ，记录他们的调用数据，然后根据数据比对进行计费功能
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

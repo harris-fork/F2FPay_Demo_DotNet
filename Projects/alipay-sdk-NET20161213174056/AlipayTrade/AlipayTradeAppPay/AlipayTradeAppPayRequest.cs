@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trade.app.pay
+    /// alipay.trade.app.pay
+    /// app支付接口2.0
     /// </summary>
-    public class AlipayTradeAppPayRequest : IAopRequest<AlipayTradeAppPayResponse>
+    public class AlipayTradeAppPayRequest : BizAopRequest<AlipayTradeAppPayResponse>
     {
-        /// <summary>
-        /// app支付接口2.0
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

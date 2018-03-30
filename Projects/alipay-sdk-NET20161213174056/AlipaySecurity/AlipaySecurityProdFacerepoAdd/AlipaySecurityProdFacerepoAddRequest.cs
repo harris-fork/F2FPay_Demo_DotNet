@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.security.prod.facerepo.add
+    /// alipay.security.prod.facerepo.add
+    /// 人脸1:N服务入库接口
     /// </summary>
-    public class AlipaySecurityProdFacerepoAddRequest : IAopRequest<AlipaySecurityProdFacerepoAddResponse>
+    public class AlipaySecurityProdFacerepoAddRequest : BizAopRequest<AlipaySecurityProdFacerepoAddResponse>
     {
-        /// <summary>
-        /// 人脸1:N服务入库接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.leads.qrcode.query
+    /// alipay.offline.market.leads.qrcode.query
+    /// 地推小二认领了Leads后申请创建开店二维码，提供给商户扫描开店。
     /// </summary>
-    public class AlipayOfflineMarketLeadsQrcodeQueryRequest : IAopRequest<AlipayOfflineMarketLeadsQrcodeQueryResponse>
+    public class AlipayOfflineMarketLeadsQrcodeQueryRequest : BizAopRequest<AlipayOfflineMarketLeadsQrcodeQueryResponse>
     {
-        /// <summary>
-        /// 地推小二认领了Leads后申请创建开店二维码，提供给商户扫描开店。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

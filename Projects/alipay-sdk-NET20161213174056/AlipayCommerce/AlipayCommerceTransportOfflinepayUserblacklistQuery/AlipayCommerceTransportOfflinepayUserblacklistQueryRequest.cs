@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.transport.offlinepay.userblacklist.query
+    /// alipay.commerce.transport.offlinepay.userblacklist.query
+    /// 脱机交易黑名单列表
     /// </summary>
-    public class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest : IAopRequest<AlipayCommerceTransportOfflinepayUserblacklistQueryResponse>
+    public class AlipayCommerceTransportOfflinepayUserblacklistQueryRequest : BizAopRequest<AlipayCommerceTransportOfflinepayUserblacklistQueryResponse>
     {
-        /// <summary>
-        /// 脱机交易黑名单列表
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

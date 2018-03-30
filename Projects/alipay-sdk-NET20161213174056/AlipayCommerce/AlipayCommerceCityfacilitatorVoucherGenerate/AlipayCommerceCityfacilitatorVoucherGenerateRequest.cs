@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.cityfacilitator.voucher.generate
+    /// alipay.commerce.cityfacilitator.voucher.generate
+    /// 地铁购票核销码发码
     /// </summary>
-    public class AlipayCommerceCityfacilitatorVoucherGenerateRequest : IAopRequest<AlipayCommerceCityfacilitatorVoucherGenerateResponse>
+    public class AlipayCommerceCityfacilitatorVoucherGenerateRequest : BizAopRequest<AlipayCommerceCityfacilitatorVoucherGenerateResponse>
     {
-        /// <summary>
-        /// 地铁购票核销码发码
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

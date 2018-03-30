@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.fund.auth.operation.detail.query
+    /// alipay.fund.auth.operation.detail.query
+    /// 资金预授权单笔操作明细查询接口
     /// </summary>
-    public class AlipayFundAuthOperationDetailQueryRequest : IAopRequest<AlipayFundAuthOperationDetailQueryResponse>
+    public class AlipayFundAuthOperationDetailQueryRequest : BizAopRequest<AlipayFundAuthOperationDetailQueryResponse>
     {
-        /// <summary>
-        /// 资金预授权单笔操作明细查询接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

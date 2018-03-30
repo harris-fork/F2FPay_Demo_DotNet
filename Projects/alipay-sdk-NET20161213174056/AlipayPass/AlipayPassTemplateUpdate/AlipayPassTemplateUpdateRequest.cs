@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.pass.template.update
+    /// alipay.pass.template.update
+    /// 支付宝pass更新模版接口
     /// </summary>
-    public class AlipayPassTemplateUpdateRequest : IAopRequest<AlipayPassTemplateUpdateResponse>
+    public class AlipayPassTemplateUpdateRequest : BizAopRequest<AlipayPassTemplateUpdateResponse>
     {
-        /// <summary>
-        /// 支付宝pass更新模版接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

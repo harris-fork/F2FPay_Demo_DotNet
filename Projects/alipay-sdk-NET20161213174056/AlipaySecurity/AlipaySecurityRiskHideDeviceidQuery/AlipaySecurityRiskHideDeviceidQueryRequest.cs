@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.security.risk.hide.deviceid.query
+    /// alipay.security.risk.hide.deviceid.query
+    /// 设备指纹查询接口
     /// </summary>
-    public class AlipaySecurityRiskHideDeviceidQueryRequest : IAopRequest<AlipaySecurityRiskHideDeviceidQueryResponse>
+    public class AlipaySecurityRiskHideDeviceidQueryRequest : BizAopRequest<AlipaySecurityRiskHideDeviceidQueryResponse>
     {
-        /// <summary>
-        /// 设备指纹查询接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

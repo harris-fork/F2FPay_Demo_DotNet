@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trade.query
+    /// alipay.trade.query
+    /// 统一收单线下交易查询  修改路由策略到R
     /// </summary>
-    public class AlipayTradeQueryRequest : IAopRequest<AlipayTradeQueryResponse>
+    public class AlipayTradeQueryRequest : BizAopRequest<AlipayTradeQueryResponse>
     {
-        /// <summary>
-        /// 统一收单线下交易查询  修改路由策略到R
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

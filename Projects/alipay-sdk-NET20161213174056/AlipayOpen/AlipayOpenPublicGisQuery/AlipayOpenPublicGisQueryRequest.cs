@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.gis.query
+    /// alipay.open.public.gis.query
+    /// 获取用户地理位置
     /// </summary>
-    public class AlipayOpenPublicGisQueryRequest : IAopRequest<AlipayOpenPublicGisQueryResponse>
+    public class AlipayOpenPublicGisQueryRequest : BizAopRequest<AlipayOpenPublicGisQueryResponse>
     {
-        /// <summary>
-        /// 获取用户地理位置
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

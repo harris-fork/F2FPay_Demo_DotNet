@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: zhima.credit.score.get
+    /// zhima.credit.score.get
+    /// 芝麻信用评分
     /// </summary>
-    public class ZhimaCreditScoreGetRequest : IAopRequest<ZhimaCreditScoreGetResponse>
+    public class ZhimaCreditScoreGetRequest : BizAopRequest<ZhimaCreditScoreGetResponse>
     {
-        /// <summary>
-        /// 芝麻信用评分
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

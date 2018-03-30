@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.std.public.follow.list
+    /// alipay.mobile.std.public.follow.list
+    /// 当nextUserId为空时,代表查询第一组,如果有值时以当前值为准查询下一组
     /// </summary>
-    public class AlipayMobileStdPublicFollowListRequest : IAopRequest<AlipayMobileStdPublicFollowListResponse>
+    public class AlipayMobileStdPublicFollowListRequest : BizAopRequest<AlipayMobileStdPublicFollowListResponse>
     {
-        /// <summary>
-        /// 当nextUserId为空时,代表查询第一组,如果有值时以当前值为准查询下一组
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -5,9 +5,10 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.account.reset
+    /// alipay.mobile.public.account.reset
+    /// json
     /// </summary>
-    public class AlipayMobilePublicAccountResetRequest : IAopRequest<AlipayMobilePublicAccountResetResponse>
+    public class AlipayMobilePublicAccountResetRequest : BizAopRequest<AlipayMobilePublicAccountResetResponse>
     {
         /// <summary>
         /// 协议号
@@ -19,10 +20,7 @@ namespace Aop.Api.Request
         /// </summary>
         public string BindAccountNo { get; set; }
 
-        /// <summary>
-        /// json
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
         /// <summary>
         /// 绑定账户的名
@@ -39,7 +37,7 @@ namespace Aop.Api.Request
         /// </summary>
         public string RealName { get; set; }
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

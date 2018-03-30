@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.account.exrate.advice.accept
+    /// alipay.account.exrate.advice.accept
+    /// 标准的兑换交易受理接口
     /// </summary>
-    public class AlipayAccountExrateAdviceAcceptRequest : IAopRequest<AlipayAccountExrateAdviceAcceptResponse>
+    public class AlipayAccountExrateAdviceAcceptRequest : BizAopRequest<AlipayAccountExrateAdviceAcceptResponse>
     {
-        /// <summary>
-        /// 标准的兑换交易受理接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

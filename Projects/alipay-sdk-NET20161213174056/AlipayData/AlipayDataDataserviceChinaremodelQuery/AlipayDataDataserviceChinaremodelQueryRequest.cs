@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.data.dataservice.chinaremodel.query
+    /// alipay.data.dataservice.chinaremodel.query
+    /// 中再核保结果查询
     /// </summary>
-    public class AlipayDataDataserviceChinaremodelQueryRequest : IAopRequest<AlipayDataDataserviceChinaremodelQueryResponse>
+    public class AlipayDataDataserviceChinaremodelQueryRequest : BizAopRequest<AlipayDataDataserviceChinaremodelQueryResponse>
     {
-        /// <summary>
-        /// 中再核保结果查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.auth.token.app.query
+    /// alipay.open.auth.token.app.query
+    /// 查询某个ISV下的指定app_auth_token的授权信息：授权者、授权接口列表、状态、过期时间等
     /// </summary>
-    public class AlipayOpenAuthTokenAppQueryRequest : IAopRequest<AlipayOpenAuthTokenAppQueryResponse>
+    public class AlipayOpenAuthTokenAppQueryRequest : BizAopRequest<AlipayOpenAuthTokenAppQueryResponse>
     {
-        /// <summary>
-        /// 查询某个ISV下的指定app_auth_token的授权信息：授权者、授权接口列表、状态、过期时间等
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

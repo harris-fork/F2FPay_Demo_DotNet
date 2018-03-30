@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.ebpp.pdeduct.sign.validate
+    /// alipay.ebpp.pdeduct.sign.validate
+    /// 缴费直连代扣签约前置校验
     /// </summary>
-    public class AlipayEbppPdeductSignValidateRequest : IAopRequest<AlipayEbppPdeductSignValidateResponse>
+    public class AlipayEbppPdeductSignValidateRequest : BizAopRequest<AlipayEbppPdeductSignValidateResponse>
     {
-        /// <summary>
-        /// 缴费直连代扣签约前置校验
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

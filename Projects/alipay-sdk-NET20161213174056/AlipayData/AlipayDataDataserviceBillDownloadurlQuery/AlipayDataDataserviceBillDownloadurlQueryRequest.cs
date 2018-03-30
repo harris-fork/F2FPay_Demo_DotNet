@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.data.dataservice.bill.downloadurl.query
+    /// alipay.data.dataservice.bill.downloadurl.query
+    /// 无授权模式的查询对账单下载地址
     /// </summary>
-    public class AlipayDataDataserviceBillDownloadurlQueryRequest : IAopRequest<AlipayDataDataserviceBillDownloadurlQueryResponse>
+    public class AlipayDataDataserviceBillDownloadurlQueryRequest : BizAopRequest<AlipayDataDataserviceBillDownloadurlQueryResponse>
     {
-        /// <summary>
-        /// 无授权模式的查询对账单下载地址
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

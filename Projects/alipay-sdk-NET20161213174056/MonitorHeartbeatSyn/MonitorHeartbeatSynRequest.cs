@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: monitor.heartbeat.syn
+    /// monitor.heartbeat.syn
+    /// 验签时该参数不做任何处理
     /// </summary>
-    public class MonitorHeartbeatSynRequest : IAopRequest<MonitorHeartbeatSynResponse>
+    public class MonitorHeartbeatSynRequest : BizAopRequest<MonitorHeartbeatSynResponse>
     {
-        /// <summary>
-        /// 验签时该参数不做任何处理
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

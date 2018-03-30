@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: ant.merchant.expand.mapplyorder.query
+    /// ant.merchant.expand.mapplyorder.query
+    /// 商户入驻单查询接口
     /// </summary>
-    public class AntMerchantExpandMapplyorderQueryRequest : IAopRequest<AntMerchantExpandMapplyorderQueryResponse>
+    public class AntMerchantExpandMapplyorderQueryRequest : BizAopRequest<AntMerchantExpandMapplyorderQueryResponse>
     {
-        /// <summary>
-        /// 商户入驻单查询接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: mybank.finance.yulibao.capital.purchase
+    /// mybank.finance.yulibao.capital.purchase
+    /// 网商银行余利宝签约
     /// </summary>
-    public class MybankFinanceYulibaoCapitalPurchaseRequest : IAopRequest<MybankFinanceYulibaoCapitalPurchaseResponse>
+    public class MybankFinanceYulibaoCapitalPurchaseRequest : BizAopRequest<MybankFinanceYulibaoCapitalPurchaseResponse>
     {
-        /// <summary>
-        /// 网商银行余利宝签约
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

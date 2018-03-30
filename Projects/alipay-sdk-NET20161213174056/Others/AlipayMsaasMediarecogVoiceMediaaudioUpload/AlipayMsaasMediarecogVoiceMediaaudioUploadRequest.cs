@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.msaas.mediarecog.voice.mediaaudio.upload
+    /// alipay.msaas.mediarecog.voice.mediaaudio.upload
+    /// 媒体实时上传音频流接口
     /// </summary>
-    public class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest : IAopRequest<AlipayMsaasMediarecogVoiceMediaaudioUploadResponse>
+    public class AlipayMsaasMediarecogVoiceMediaaudioUploadRequest : BizAopRequest<AlipayMsaasMediarecogVoiceMediaaudioUploadResponse>
     {
-        /// <summary>
-        /// 媒体实时上传音频流接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

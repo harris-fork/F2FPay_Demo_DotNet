@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.app.packagetest
+    /// alipay.open.app.packagetest
+    /// ISP功能测试接口
     /// </summary>
-    public class AlipayOpenAppPackagetestRequest : IAopRequest<AlipayOpenAppPackagetestResponse>
+    public class AlipayOpenAppPackagetestRequest : BizAopRequest<AlipayOpenAppPackagetestResponse>
     {
-        /// <summary>
-        /// ISP功能测试接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

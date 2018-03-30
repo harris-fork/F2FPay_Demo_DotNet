@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.pcredit.loan.apply.create
+    /// alipay.pcredit.loan.apply.create
+    /// 用户申贷
     /// </summary>
-    public class AlipayPcreditLoanApplyCreateRequest : IAopRequest<AlipayPcreditLoanApplyCreateResponse>
+    public class AlipayPcreditLoanApplyCreateRequest : BizAopRequest<AlipayPcreditLoanApplyCreateResponse>
     {
-        /// <summary>
-        /// 用户申贷
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

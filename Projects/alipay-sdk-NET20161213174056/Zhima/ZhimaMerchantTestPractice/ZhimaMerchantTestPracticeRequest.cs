@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: zhima.merchant.test.practice
+    /// zhima.merchant.test.practice
+    /// asd
     /// </summary>
-    public class ZhimaMerchantTestPracticeRequest : IAopRequest<ZhimaMerchantTestPracticeResponse>
+    public class ZhimaMerchantTestPracticeRequest : BizAopRequest<ZhimaMerchantTestPracticeResponse>
     {
-        /// <summary>
-        /// asd
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

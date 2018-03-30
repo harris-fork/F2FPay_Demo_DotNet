@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trust.user.risk.summary.get
+    /// alipay.trust.user.risk.summary.get
+    /// 描述用户信息
     /// </summary>
-    public class AlipayTrustUserRiskSummaryGetRequest : IAopRequest<AlipayTrustUserRiskSummaryGetResponse>
+    public class AlipayTrustUserRiskSummaryGetRequest : BizAopRequest<AlipayTrustUserRiskSummaryGetResponse>
     {
-        /// <summary>
-        /// 描述用户信息
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.label.delete
+    /// alipay.mobile.public.label.delete
+    /// json串，<a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7386797.0.0.1l7WMo&treeId=53&articleId=103507&docType=1">详情请见</a>
     /// </summary>
-    public class AlipayMobilePublicLabelDeleteRequest : IAopRequest<AlipayMobilePublicLabelDeleteResponse>
+    public class AlipayMobilePublicLabelDeleteRequest : BizAopRequest<AlipayMobilePublicLabelDeleteResponse>
     {
-        /// <summary>
-        /// json串，<a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7386797.0.0.1l7WMo&treeId=53&articleId=103507&docType=1">详情请见</a>
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

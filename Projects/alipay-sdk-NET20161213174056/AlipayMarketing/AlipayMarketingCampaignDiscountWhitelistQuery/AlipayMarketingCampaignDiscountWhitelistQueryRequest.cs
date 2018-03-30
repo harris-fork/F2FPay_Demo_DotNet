@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.marketing.campaign.discount.whitelist.query
+    /// alipay.marketing.campaign.discount.whitelist.query
+    /// 优惠活动白名单查询
     /// </summary>
-    public class AlipayMarketingCampaignDiscountWhitelistQueryRequest : IAopRequest<AlipayMarketingCampaignDiscountWhitelistQueryResponse>
+    public class AlipayMarketingCampaignDiscountWhitelistQueryRequest : BizAopRequest<AlipayMarketingCampaignDiscountWhitelistQueryResponse>
     {
-        /// <summary>
-        /// 优惠活动白名单查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

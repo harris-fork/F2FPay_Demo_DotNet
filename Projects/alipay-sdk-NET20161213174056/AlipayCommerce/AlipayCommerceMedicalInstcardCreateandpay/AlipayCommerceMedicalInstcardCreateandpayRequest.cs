@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.medical.instcard.createandpay
+    /// alipay.commerce.medical.instcard.createandpay
+    /// 根据用户已经在支付宝绑定过的医保卡为医疗行业提供收单支付服务。同时支持自费支付服务
     /// </summary>
-    public class AlipayCommerceMedicalInstcardCreateandpayRequest : IAopRequest<AlipayCommerceMedicalInstcardCreateandpayResponse>
+    public class AlipayCommerceMedicalInstcardCreateandpayRequest : BizAopRequest<AlipayCommerceMedicalInstcardCreateandpayResponse>
     {
-        /// <summary>
-        /// 根据用户已经在支付宝绑定过的医保卡为医疗行业提供收单支付服务。同时支持自费支付服务
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

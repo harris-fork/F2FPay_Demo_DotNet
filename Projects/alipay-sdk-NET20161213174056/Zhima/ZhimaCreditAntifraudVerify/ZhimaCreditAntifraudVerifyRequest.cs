@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: zhima.credit.antifraud.verify
+    /// zhima.credit.antifraud.verify
+    /// 欺诈信息验证
     /// </summary>
-    public class ZhimaCreditAntifraudVerifyRequest : IAopRequest<ZhimaCreditAntifraudVerifyResponse>
+    public class ZhimaCreditAntifraudVerifyRequest : BizAopRequest<ZhimaCreditAntifraudVerifyResponse>
     {
-        /// <summary>
-        /// 欺诈信息验证
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

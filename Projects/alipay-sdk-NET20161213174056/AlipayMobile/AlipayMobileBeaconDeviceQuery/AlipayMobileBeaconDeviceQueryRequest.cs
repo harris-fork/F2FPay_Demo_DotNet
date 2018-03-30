@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.beacon.device.query
+    /// alipay.mobile.beacon.device.query
+    /// 设备的UUID
     /// </summary>
-    public class AlipayMobileBeaconDeviceQueryRequest : IAopRequest<AlipayMobileBeaconDeviceQueryResponse>
+    public class AlipayMobileBeaconDeviceQueryRequest : BizAopRequest<AlipayMobileBeaconDeviceQueryResponse>
     {
-        /// <summary>
-        /// 设备的UUID
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

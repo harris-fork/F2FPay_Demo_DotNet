@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.mycar.maintain.data.update
+    /// alipay.eco.mycar.maintain.data.update
+    /// 保养数据变更通知
     /// </summary>
-    public class AlipayEcoMycarMaintainDataUpdateRequest : IAopRequest<AlipayEcoMycarMaintainDataUpdateResponse>
+    public class AlipayEcoMycarMaintainDataUpdateRequest : BizAopRequest<AlipayEcoMycarMaintainDataUpdateResponse>
     {
-        /// <summary>
-        /// 保养数据变更通知
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

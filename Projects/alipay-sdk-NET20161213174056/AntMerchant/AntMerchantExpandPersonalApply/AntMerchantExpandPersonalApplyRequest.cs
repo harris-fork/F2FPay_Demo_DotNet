@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: ant.merchant.expand.personal.apply
+    /// ant.merchant.expand.personal.apply
+    /// 工商个体户入驻接口
     /// </summary>
-    public class AntMerchantExpandPersonalApplyRequest : IAopRequest<AntMerchantExpandPersonalApplyResponse>
+    public class AntMerchantExpandPersonalApplyRequest : BizAopRequest<AntMerchantExpandPersonalApplyResponse>
     {
-        /// <summary>
-        /// 工商个体户入驻接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: mybank.finance.yulibao.trans.history.query
+    /// mybank.finance.yulibao.trans.history.query
+    /// 余利宝历史交易查询
     /// </summary>
-    public class MybankFinanceYulibaoTransHistoryQueryRequest : IAopRequest<MybankFinanceYulibaoTransHistoryQueryResponse>
+    public class MybankFinanceYulibaoTransHistoryQueryRequest : BizAopRequest<MybankFinanceYulibaoTransHistoryQueryResponse>
     {
-        /// <summary>
-        /// 余利宝历史交易查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

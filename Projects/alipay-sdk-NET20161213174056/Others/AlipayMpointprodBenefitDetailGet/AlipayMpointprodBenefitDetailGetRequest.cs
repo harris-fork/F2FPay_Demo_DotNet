@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mpointprod.benefit.detail.get
+    /// alipay.mpointprod.benefit.detail.get
+    /// 消息体内容，JSON格式，不含换行、空格  参数:  userId: 支付用户ID, 可以直接传递openId  benefitType: 权益类型,支持(MemberGrade:会员等级)  benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 默认:全部
     /// </summary>
-    public class AlipayMpointprodBenefitDetailGetRequest : IAopRequest<AlipayMpointprodBenefitDetailGetResponse>
+    public class AlipayMpointprodBenefitDetailGetRequest : BizAopRequest<AlipayMpointprodBenefitDetailGetResponse>
     {
-        /// <summary>
-        /// 消息体内容，JSON格式，不含换行、空格  参数:  userId: 支付用户ID, 可以直接传递openId  benefitType: 权益类型,支持(MemberGrade:会员等级)  benefitStatus: 状态只支持(VALID:生效、WAIT:待生效、INVALID:失效), 默认:全部
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

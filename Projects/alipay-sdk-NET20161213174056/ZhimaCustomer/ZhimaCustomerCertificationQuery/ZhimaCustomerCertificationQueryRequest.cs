@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: zhima.customer.certification.query
+    /// zhima.customer.certification.query
+    /// 芝麻认证查询
     /// </summary>
-    public class ZhimaCustomerCertificationQueryRequest : IAopRequest<ZhimaCustomerCertificationQueryResponse>
+    public class ZhimaCustomerCertificationQueryRequest : BizAopRequest<ZhimaCustomerCertificationQueryResponse>
     {
-        /// <summary>
-        /// 芝麻认证查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

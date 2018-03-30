@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.item.modify
+    /// alipay.offline.market.item.modify
+    /// 商户可以通过此接口对商品进行库存等信息的修改（库存修改值只能大于当前值）
     /// </summary>
-    public class AlipayOfflineMarketItemModifyRequest : IAopRequest<AlipayOfflineMarketItemModifyResponse>
+    public class AlipayOfflineMarketItemModifyRequest : BizAopRequest<AlipayOfflineMarketItemModifyResponse>
     {
-        /// <summary>
-        /// 商户可以通过此接口对商品进行库存等信息的修改（库存修改值只能大于当前值）
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

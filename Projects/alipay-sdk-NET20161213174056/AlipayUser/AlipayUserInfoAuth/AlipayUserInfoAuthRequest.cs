@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.user.info.auth
+    /// alipay.user.info.auth
+    /// 用户登陆授权
     /// </summary>
-    public class AlipayUserInfoAuthRequest : IAopRequest<AlipayUserInfoAuthResponse>
+    public class AlipayUserInfoAuthRequest : BizAopRequest<AlipayUserInfoAuthResponse>
     {
-        /// <summary>
-        /// 用户登陆授权
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

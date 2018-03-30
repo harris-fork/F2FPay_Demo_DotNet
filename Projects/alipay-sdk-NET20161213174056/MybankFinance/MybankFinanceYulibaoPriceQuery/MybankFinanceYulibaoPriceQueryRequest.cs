@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: mybank.finance.yulibao.price.query
+    /// mybank.finance.yulibao.price.query
+    /// 查询余利宝行情信息（七日年化收益率、万份收益金额）
     /// </summary>
-    public class MybankFinanceYulibaoPriceQueryRequest : IAopRequest<MybankFinanceYulibaoPriceQueryResponse>
+    public class MybankFinanceYulibaoPriceQueryRequest : BizAopRequest<MybankFinanceYulibaoPriceQueryResponse>
     {
-        /// <summary>
-        /// 查询余利宝行情信息（七日年化收益率、万份收益金额）
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

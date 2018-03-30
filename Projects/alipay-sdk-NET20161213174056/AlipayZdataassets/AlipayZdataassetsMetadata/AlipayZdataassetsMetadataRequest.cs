@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.zdataassets.metadata
+    /// alipay.zdataassets.metadata
+    /// 业务参数
     /// </summary>
-    public class AlipayZdataassetsMetadataRequest : IAopRequest<AlipayZdataassetsMetadataResponse>
+    public class AlipayZdataassetsMetadataRequest : BizAopRequest<AlipayZdataassetsMetadataResponse>
     {
-        /// <summary>
-        /// 业务参数
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

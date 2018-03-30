@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.fund.auth.order.freeze
+    /// alipay.fund.auth.order.freeze
+    /// 资金预授权冻结接口
     /// </summary>
-    public class AlipayFundAuthOrderFreezeRequest : IAopRequest<AlipayFundAuthOrderFreezeResponse>
+    public class AlipayFundAuthOrderFreezeRequest : BizAopRequest<AlipayFundAuthOrderFreezeResponse>
     {
-        /// <summary>
-        /// 资金预授权冻结接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

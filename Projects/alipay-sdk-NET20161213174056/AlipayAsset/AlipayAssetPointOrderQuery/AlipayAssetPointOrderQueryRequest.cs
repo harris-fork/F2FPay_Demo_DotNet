@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.asset.point.order.query
+    /// alipay.asset.point.order.query
+    /// 商户在调用集分宝发放接口后可以通过此接口查询发放情况
     /// </summary>
-    public class AlipayAssetPointOrderQueryRequest : IAopRequest<AlipayAssetPointOrderQueryResponse>
+    public class AlipayAssetPointOrderQueryRequest : BizAopRequest<AlipayAssetPointOrderQueryResponse>
     {
-        /// <summary>
-        /// 商户在调用集分宝发放接口后可以通过此接口查询发放情况
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

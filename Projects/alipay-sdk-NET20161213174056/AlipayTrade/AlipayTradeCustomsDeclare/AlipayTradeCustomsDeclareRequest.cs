@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trade.customs.declare
+    /// alipay.trade.customs.declare
+    /// 统一收单报关接口
     /// </summary>
-    public class AlipayTradeCustomsDeclareRequest : IAopRequest<AlipayTradeCustomsDeclareResponse>
+    public class AlipayTradeCustomsDeclareRequest : BizAopRequest<AlipayTradeCustomsDeclareResponse>
     {
-        /// <summary>
-        /// 统一收单报关接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

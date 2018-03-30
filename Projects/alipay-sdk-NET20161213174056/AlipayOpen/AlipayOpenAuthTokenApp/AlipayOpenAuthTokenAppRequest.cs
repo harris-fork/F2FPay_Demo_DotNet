@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.auth.token.app
+    /// alipay.open.auth.token.app
+    /// 用应用授权码（app_auth_code）换取或者刷新应用授权令牌(app_auth_token)
     /// </summary>
-    public class AlipayOpenAuthTokenAppRequest : IAopRequest<AlipayOpenAuthTokenAppResponse>
+    public class AlipayOpenAuthTokenAppRequest : BizAopRequest<AlipayOpenAuthTokenAppResponse>
     {
-        /// <summary>
-        /// 用应用授权码（app_auth_code）换取或者刷新应用授权令牌(app_auth_token)
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

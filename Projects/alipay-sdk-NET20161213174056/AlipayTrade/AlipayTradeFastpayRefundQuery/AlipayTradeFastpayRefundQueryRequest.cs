@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.trade.fastpay.refund.query
+    /// alipay.trade.fastpay.refund.query
+    /// 商户可使用该接口查询自已通过alipay.trade.refund提交的退款请求是否执行成功。
     /// </summary>
-    public class AlipayTradeFastpayRefundQueryRequest : IAopRequest<AlipayTradeFastpayRefundQueryResponse>
+    public class AlipayTradeFastpayRefundQueryRequest : BizAopRequest<AlipayTradeFastpayRefundQueryResponse>
     {
-        /// <summary>
-        /// 商户可使用该接口查询自已通过alipay.trade.refund提交的退款请求是否执行成功。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

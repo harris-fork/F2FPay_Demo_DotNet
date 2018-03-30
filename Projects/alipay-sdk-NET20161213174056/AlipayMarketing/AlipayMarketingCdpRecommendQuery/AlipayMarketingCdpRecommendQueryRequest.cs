@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.marketing.cdp.recommend.query
+    /// alipay.marketing.cdp.recommend.query
+    /// 外部应用根据用户当前地理位置查询附近商家信息
     /// </summary>
-    public class AlipayMarketingCdpRecommendQueryRequest : IAopRequest<AlipayMarketingCdpRecommendQueryResponse>
+    public class AlipayMarketingCdpRecommendQueryRequest : BizAopRequest<AlipayMarketingCdpRecommendQueryResponse>
     {
-        /// <summary>
-        /// 外部应用根据用户当前地理位置查询附近商家信息
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

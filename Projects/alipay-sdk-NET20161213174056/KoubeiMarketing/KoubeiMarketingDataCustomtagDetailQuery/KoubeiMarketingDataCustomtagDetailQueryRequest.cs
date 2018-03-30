@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: koubei.marketing.data.customtag.detail.query
+    /// koubei.marketing.data.customtag.detail.query
+    /// 自定义标签详情查询
     /// </summary>
-    public class KoubeiMarketingDataCustomtagDetailQueryRequest : IAopRequest<KoubeiMarketingDataCustomtagDetailQueryResponse>
+    public class KoubeiMarketingDataCustomtagDetailQueryRequest : BizAopRequest<KoubeiMarketingDataCustomtagDetailQueryResponse>
     {
-        /// <summary>
-        /// 自定义标签详情查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

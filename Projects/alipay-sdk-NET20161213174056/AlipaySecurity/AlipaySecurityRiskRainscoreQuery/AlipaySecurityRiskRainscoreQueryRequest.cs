@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.security.risk.rainscore.query
+    /// alipay.security.risk.rainscore.query
+    /// RAIN （Risk of Activity, Identity and Network）是蚁盾旗下产品，专业提供风险评分服务，是一套能够对手机号进行风险预测、风险解释的评分体系。
     /// </summary>
-    public class AlipaySecurityRiskRainscoreQueryRequest : IAopRequest<AlipaySecurityRiskRainscoreQueryResponse>
+    public class AlipaySecurityRiskRainscoreQueryRequest : BizAopRequest<AlipaySecurityRiskRainscoreQueryResponse>
     {
-        /// <summary>
-        /// RAIN （Risk of Activity, Identity and Network）是蚁盾旗下产品，专业提供风险评分服务，是一套能够对手机号进行风险预测、风险解释的评分体系。
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

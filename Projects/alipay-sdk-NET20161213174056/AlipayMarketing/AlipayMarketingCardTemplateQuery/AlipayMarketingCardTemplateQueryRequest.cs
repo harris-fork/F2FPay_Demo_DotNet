@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.marketing.card.template.query
+    /// alipay.marketing.card.template.query
+    /// 会员卡模板查询接口
     /// </summary>
-    public class AlipayMarketingCardTemplateQueryRequest : IAopRequest<AlipayMarketingCardTemplateQueryResponse>
+    public class AlipayMarketingCardTemplateQueryRequest : BizAopRequest<AlipayMarketingCardTemplateQueryResponse>
     {
-        /// <summary>
-        /// 会员卡模板查询接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

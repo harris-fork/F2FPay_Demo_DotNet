@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.servicemarket.order.item.cancel
+    /// alipay.open.servicemarket.order.item.cancel
+    /// 服务订单明细实施项单项取消
     /// </summary>
-    public class AlipayOpenServicemarketOrderItemCancelRequest : IAopRequest<AlipayOpenServicemarketOrderItemCancelResponse>
+    public class AlipayOpenServicemarketOrderItemCancelRequest : BizAopRequest<AlipayOpenServicemarketOrderItemCancelResponse>
     {
-        /// <summary>
-        /// 服务订单明细实施项单项取消
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

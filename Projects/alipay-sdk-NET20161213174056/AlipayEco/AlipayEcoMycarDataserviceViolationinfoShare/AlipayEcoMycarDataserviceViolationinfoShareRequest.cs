@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.mycar.dataservice.violationinfo.share
+    /// alipay.eco.mycar.dataservice.violationinfo.share
+    /// ISV获取违章车辆信息
     /// </summary>
-    public class AlipayEcoMycarDataserviceViolationinfoShareRequest : IAopRequest<AlipayEcoMycarDataserviceViolationinfoShareResponse>
+    public class AlipayEcoMycarDataserviceViolationinfoShareRequest : BizAopRequest<AlipayEcoMycarDataserviceViolationinfoShareResponse>
     {
-        /// <summary>
-        /// ISV获取违章车辆信息
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

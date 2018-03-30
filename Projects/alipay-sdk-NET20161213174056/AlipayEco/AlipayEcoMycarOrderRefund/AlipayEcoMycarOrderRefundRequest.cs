@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.eco.mycar.order.refund
+    /// alipay.eco.mycar.order.refund
+    /// 发起退款
     /// </summary>
-    public class AlipayEcoMycarOrderRefundRequest : IAopRequest<AlipayEcoMycarOrderRefundResponse>
+    public class AlipayEcoMycarOrderRefundRequest : BizAopRequest<AlipayEcoMycarOrderRefundResponse>
     {
-        /// <summary>
-        /// 发起退款
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

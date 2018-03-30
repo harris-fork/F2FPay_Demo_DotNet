@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.cityfacilitator.voucher.confirm
+    /// alipay.commerce.cityfacilitator.voucher.confirm
+    /// 钱包中地铁票购票，获得核销码，线下地铁自助购票机上凭核销码取票,购票确认
     /// </summary>
-    public class AlipayCommerceCityfacilitatorVoucherConfirmRequest : IAopRequest<AlipayCommerceCityfacilitatorVoucherConfirmResponse>
+    public class AlipayCommerceCityfacilitatorVoucherConfirmRequest : BizAopRequest<AlipayCommerceCityfacilitatorVoucherConfirmResponse>
     {
-        /// <summary>
-        /// 钱包中地铁票购票，获得核销码，线下地铁自助购票机上凭核销码取票,购票确认
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

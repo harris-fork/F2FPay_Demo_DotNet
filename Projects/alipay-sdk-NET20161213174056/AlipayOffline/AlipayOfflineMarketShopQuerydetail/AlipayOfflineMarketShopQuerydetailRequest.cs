@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.market.shop.querydetail
+    /// alipay.offline.market.shop.querydetail
+    /// 系统商通过该接口可以查询单个门店的详细信息，包括门店基础信息，门店状态等信息
     /// </summary>
-    public class AlipayOfflineMarketShopQuerydetailRequest : IAopRequest<AlipayOfflineMarketShopQuerydetailResponse>
+    public class AlipayOfflineMarketShopQuerydetailRequest : BizAopRequest<AlipayOfflineMarketShopQuerydetailResponse>
     {
-        /// <summary>
-        /// 系统商通过该接口可以查询单个门店的详细信息，包括门店基础信息，门店状态等信息
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.offline.provider.dish.query
+    /// alipay.offline.provider.dish.query
+    /// 口碑菜品热度查询
     /// </summary>
-    public class AlipayOfflineProviderDishQueryRequest : IAopRequest<AlipayOfflineProviderDishQueryResponse>
+    public class AlipayOfflineProviderDishQueryRequest : BizAopRequest<AlipayOfflineProviderDishQueryResponse>
     {
-        /// <summary>
-        /// 口碑菜品热度查询
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

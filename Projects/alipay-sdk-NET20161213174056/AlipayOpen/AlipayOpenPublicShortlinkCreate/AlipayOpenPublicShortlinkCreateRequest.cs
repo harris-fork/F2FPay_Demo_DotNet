@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.shortlink.create
+    /// alipay.open.public.shortlink.create
+    /// 服务窗短链自主生成接口
     /// </summary>
-    public class AlipayOpenPublicShortlinkCreateRequest : IAopRequest<AlipayOpenPublicShortlinkCreateResponse>
+    public class AlipayOpenPublicShortlinkCreateRequest : BizAopRequest<AlipayOpenPublicShortlinkCreateResponse>
     {
-        /// <summary>
-        /// 服务窗短链自主生成接口
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

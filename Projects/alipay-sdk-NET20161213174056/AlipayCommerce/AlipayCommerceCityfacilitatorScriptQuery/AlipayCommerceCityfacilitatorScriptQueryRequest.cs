@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.cityfacilitator.script.query
+    /// alipay.commerce.cityfacilitator.script.query
+    /// 查询城市一卡通的判卡、读卡脚本
     /// </summary>
-    public class AlipayCommerceCityfacilitatorScriptQueryRequest : IAopRequest<AlipayCommerceCityfacilitatorScriptQueryResponse>
+    public class AlipayCommerceCityfacilitatorScriptQueryRequest : BizAopRequest<AlipayCommerceCityfacilitatorScriptQueryResponse>
     {
-        /// <summary>
-        /// 查询城市一卡通的判卡、读卡脚本
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.open.public.label.user.delete
+    /// alipay.open.public.label.user.delete
+    /// 公众号标签管理-删除用户标签
     /// </summary>
-    public class AlipayOpenPublicLabelUserDeleteRequest : IAopRequest<AlipayOpenPublicLabelUserDeleteResponse>
+    public class AlipayOpenPublicLabelUserDeleteRequest : BizAopRequest<AlipayOpenPublicLabelUserDeleteResponse>
     {
-        /// <summary>
-        /// 公众号标签管理-删除用户标签
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

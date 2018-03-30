@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.commerce.cityfacilitator.deposit.query
+    /// alipay.commerce.cityfacilitator.deposit.query
+    /// 商户查询用户的充值转账记录
     /// </summary>
-    public class AlipayCommerceCityfacilitatorDepositQueryRequest : IAopRequest<AlipayCommerceCityfacilitatorDepositQueryResponse>
+    public class AlipayCommerceCityfacilitatorDepositQueryRequest : BizAopRequest<AlipayCommerceCityfacilitatorDepositQueryResponse>
     {
-        /// <summary>
-        /// 商户查询用户的充值转账记录
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

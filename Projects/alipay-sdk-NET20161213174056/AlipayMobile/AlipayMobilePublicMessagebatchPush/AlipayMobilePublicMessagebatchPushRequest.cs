@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.messagebatch.push
+    /// alipay.mobile.public.messagebatch.push
+    /// 业务内容JSON
     /// </summary>
-    public class AlipayMobilePublicMessagebatchPushRequest : IAopRequest<AlipayMobilePublicMessagebatchPushResponse>
+    public class AlipayMobilePublicMessagebatchPushRequest : BizAopRequest<AlipayMobilePublicMessagebatchPushResponse>
     {
-        /// <summary>
-        /// 业务内容JSON
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

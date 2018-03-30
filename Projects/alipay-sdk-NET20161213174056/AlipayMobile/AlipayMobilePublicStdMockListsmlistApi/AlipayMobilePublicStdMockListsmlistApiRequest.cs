@@ -5,16 +5,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: alipay.mobile.public.std.mock.listsmlist.api
+    /// alipay.mobile.public.std.mock.listsmlist.api
+    /// JSON
     /// </summary>
-    public class AlipayMobilePublicStdMockListsmlistApiRequest : IAopRequest<AlipayMobilePublicStdMockListsmlistApiResponse>
+    public class AlipayMobilePublicStdMockListsmlistApiRequest : BizAopRequest<AlipayMobilePublicStdMockListsmlistApiResponse>
     {
-        /// <summary>
-        /// JSON
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {

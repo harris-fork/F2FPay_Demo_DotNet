@@ -6,16 +6,14 @@ using Aop.Api.Response;
 namespace Aop.Api.Request
 {
     /// <summary>
-    /// AOP API: zhima.data.feedbackurl.query
+    /// zhima.data.feedbackurl.query
+    /// 获取数据反馈模板
     /// </summary>
-    public class ZhimaDataFeedbackurlQueryRequest : IAopRequest<ZhimaDataFeedbackurlQueryResponse>
+    public class ZhimaDataFeedbackurlQueryRequest : BizAopRequest<ZhimaDataFeedbackurlQueryResponse>
     {
-        /// <summary>
-        /// 获取数据反馈模板
-        /// </summary>
-        public string BizContent { get; set; }
+        
 
-        #region IAopRequest Members
+        #region BizAopRequest Members
 
         public override string GetApiName()
         {
