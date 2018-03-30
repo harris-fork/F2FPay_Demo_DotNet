@@ -13,7 +13,7 @@ namespace Aop.Api
         public AopDictionary()
         {
 
-        } 
+        }
 
         public AopDictionary(IDictionary<string, string> dictionary)
             : base(dictionary)

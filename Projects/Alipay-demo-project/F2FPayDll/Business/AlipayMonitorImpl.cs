@@ -16,7 +16,7 @@ namespace Com.Alipay
     public class AlipayMonitor
     {
 
-        IAopClient client = null;
+        DefaultAopClient client = null;
 
         public AlipayMonitor(string monitorUrl, string appId, string merchant_private_key, string format, string version,
      string sign_type, string alipay_public_key, string charset)

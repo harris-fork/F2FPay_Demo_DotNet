@@ -19,7 +19,6 @@ namespace Aop.Api.Domain
         /// 产品编码；由蚂蚁保险平台分配，商户通过该产品编码投保特定的保险产品（如饿了么外卖延误险)
         /// </summary>
         [XmlElement("prod_code")]
-        public string ProdCode { get; set; }
 
         /// <summary>
         /// 卖家

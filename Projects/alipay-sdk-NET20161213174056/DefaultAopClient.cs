@@ -11,15 +11,14 @@ using System.IO;
 using System.Net;
 
 using System.Xml;
-using Jayrock.Json;
-using Jayrock.Json.Conversion;
+using Newtonsoft.Json;
 
 namespace Aop.Api
 {
     /// <summary>
     /// AOP客户端。
     /// </summary>
-    public class DefaultAopClient : IAopClient
+    public class DefaultAopClient
     {
         public const string APP_ID = "app_id";
         public const string FORMAT = "format";
@@ -151,27 +150,49 @@ namespace Aop.Api
         #endregion
 
         #region IAopClient Members
-
+        /// <summary>
+        /// 执行AOP公开API请求。
+        /// </summary>
+        /// <typeparam name="T">领域对象</typeparam>
+        /// <param name="request">具体的AOP API请求</param>
+        /// <returns>领域对象</returns>
         public T Execute<T>(IAopRequest<T> request) where T : AopResponse
         {
             return Execute<T>(request, null);
         }
 
+        /// <summary>
+        /// 执行AOP隐私API请求。
+        /// </summary>
+        /// <typeparam name="T">领域对象</typeparam>
+        /// <param name="request">具体的AOP API请求</param>
+        /// <param name="session">用户会话码</param>
+        /// <returns>领域对象</returns>
         public T Execute<T>(IAopRequest<T> request, string accessToken) where T : AopResponse
         {
-
             return Execute<T>(request, accessToken, null);
 
         }
         #endregion
         #region IAopClient Members
+        /// <summary>
+        /// 执行AOP公开API请求。
+        /// </summary>
+        /// <typeparam name="T">领域对象</typeparam>
+        /// <param name="request">具体的AOP API请求</param>
+        /// <returns>领域对象</returns>
         public T pageExecute<T>(IAopRequest<T> request) where T : AopResponse
         {
             return pageExecute<T>(request, null, "POST");
         }
-        #endregion
 
-        #region IAopClient Members
+        /// <summary>
+        /// 执行AOP隐私API请求。
+        /// </summary>
+        /// <typeparam name="T">领域对象</typeparam>
+        /// <param name="request">具体的AOP API请求</param>
+        /// <param name="session">用户会话码</param>
+        /// <returns>领域对象</returns>
         public T pageExecute<T>(IAopRequest<T> request, string accessToken, string reqMethod) where T : AopResponse
         {
             if (string.IsNullOrEmpty(this.charset))
@@ -212,7 +233,7 @@ namespace Aop.Api
             txtParams.Add(NOTIFY_URL, request.NotifyUrl);
             txtParams.Add(CHARSET, this.charset);
             txtParams.Add(RETURN_URL, this.return_url);
-            //  txtParams.Add("return_url", request.GetReturnUrl() );    
+            //  txtParams.Add("return_url", request.GetReturnUrl() );
             //字典排序
             IDictionary<string, string> sortedTxtParams = new SortedDictionary<string, string>(txtParams);
             txtParams = new AopDictionary(sortedTxtParams);
@@ -261,16 +282,16 @@ namespace Aop.Api
             }
 
             T rsp = null;
-            IAopParser<T> parser = null;
+
             if ("xml".Equals(format))
             {
-                parser = new AopXmlParser<T>();
+                AopXmlParser<T> parser = new AopXmlParser<T>();
                 rsp = parser.Parse(body, charset);
             }
             else
             {
-                parser = new AopJsonParser<T>();
-                rsp = parser.Parse(body, charset);
+                var parser = new AopJsonParser<T>();
+                rsp = JsonConvert.DeserializeObject<T>(body);
             }
 
             //验签
@@ -280,6 +301,14 @@ namespace Aop.Api
         #endregion
 
         #region IAopClient Members
+        /// <summary>
+        /// 执行AOP隐私API请求。
+        /// </summary>
+        /// <typeparam name="T">领域对象</typeparam>
+        /// <param name="request">具体的AOP API请求</param>
+        /// <param name="session">用户会话码</param>
+        /// <param name="appAuthToken">应用授权码</param>
+        /// <returns>领域对象</returns>
         public T Execute<T>(IAopRequest<T> request, string accessToken, string appAuthToken) where T : AopResponse
         {
 
@@ -371,22 +400,28 @@ namespace Aop.Api
             }
 
             T rsp = null;
-            IAopParser<T> parser = null;
             if ("xml".Equals(format))
             {
-                parser = new AopXmlParser<T>();
+                var parser = new AopXmlParser<T>();
                 rsp = parser.Parse(body, charset);
+
+                ResponseParseItem item = parseRespItem(request, body, parser, this.encyptKey, this.encyptType, charset);
+                rsp = parser.Parse(item.realContent, charset);
+
+                CheckResponseSign(request, item.respContent, rsp.IsError, parser, this.alipayPublicKey, this.charset, signType, this.keyFromFile);
             }
             else
             {
-                parser = new AopJsonParser<T>();
-                rsp = parser.Parse(body, charset);
+                rsp = JsonConvert.DeserializeObject<T>(body);
+
+                AopJsonParser<T> parser = new AopJsonParser<T>();
+
+                ResponseParseItem item = parseRespItem(request, body, parser, this.encyptKey, this.encyptType, charset);
+
+                rsp =JsonConvert.DeserializeObject<T>(item.realContent);
+
+                CheckResponseSign(request, item.respContent, rsp.IsError, parser, this.alipayPublicKey, this.charset, signType, this.keyFromFile);
             }
-
-            ResponseParseItem item = parseRespItem(request, body, parser, this.encyptKey, this.encyptType, charset);
-            rsp = parser.Parse(item.realContent, charset);
-
-            CheckResponseSign(request, item.respContent, rsp.IsError, parser, this.alipayPublicKey, this.charset, signType, this.keyFromFile);
 
             return rsp;
 
@@ -503,7 +538,7 @@ namespace Aop.Api
             StringBuilder sbHtml = new StringBuilder();
             //sbHtml.Append("<head><meta http-equiv=\"Content-Type\" content=\"text/html\" charset= \"" + charset + "\" /></head>");
 
-            sbHtml.Append("<form id='alipaysubmit' name='alipaysubmit' action='" + this.serverUrl + "?charset=" + this.charset + 
+            sbHtml.Append("<form id='alipaysubmit' name='alipaysubmit' action='" + this.serverUrl + "?charset=" + this.charset +
                  "' method='" + strMethod + "'>");
 
             foreach (KeyValuePair<string, string> temp in dicPara)
@@ -557,6 +592,12 @@ namespace Aop.Api
 
         #region SDK Execute
 
+        /// <summary>
+        /// 执行AOP公开API请求。
+        /// </summary>
+        /// <typeparam name="T">领域对象</typeparam>
+        /// <param name="request">具体的AOP API请求</param>
+        /// <returns>领域对象</returns>
         public T SdkExecute<T>(IAopRequest<T> request) where T : AopResponse
         {
             // 构造请求参数
@@ -577,7 +618,7 @@ namespace Aop.Api
             String signedResult = WebUtils.BuildQuery(sortedAopDic, charset);
 
             // 构造结果
-            T rsp = (T) Activator.CreateInstance(typeof(T));
+            T rsp = (T)Activator.CreateInstance(typeof(T));
             rsp.Body = signedResult;
             return rsp;
         }
@@ -645,7 +686,7 @@ namespace Aop.Api
         #region Model Serialize
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="requestParams"></param>
@@ -654,30 +695,13 @@ namespace Aop.Api
         private AopDictionary SerializeBizModel<T>(AopDictionary requestParams, IAopRequest<T> request) where T : AopResponse
         {
             AopDictionary result = requestParams;
-            Boolean isBizContentEmpty = !requestParams.ContainsKey(BIZ_CONTENT) || String.IsNullOrEmpty(requestParams[BIZ_CONTENT]);
-            if (isBizContentEmpty && request.BizModel != null)
+
+            if ((!requestParams.ContainsKey(BIZ_CONTENT) || string.IsNullOrEmpty(requestParams[BIZ_CONTENT])) && request.BizModel != null)
             {
-                AopObject bizModel = request.BizModel;
-                String content = Serialize(bizModel);
+                String content = JsonConvert.SerializeObject(request.BizModel);
+
                 result.Add(BIZ_CONTENT, content);
             }
-            return result;
-        }
-
-        /// <summary>
-        /// AopObject序列化
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        private String Serialize(AopObject obj)
-        {
-            // 使用AopModelParser序列化对象
-            AopModelParser parser = new AopModelParser();
-            JsonObject jo = parser.serializeAopObject(obj);
-
-            // 根据JsonObject导出String格式的Json
-            String result = JsonConvert.ExportToString(jo);
-
             return result;
         }
 

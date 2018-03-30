@@ -7,10 +7,11 @@ using Aop.Api.Request;
 using Aop.Api.Response;
 using Aop.Api.Util;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace Aop.Api
 {
-    public class AlipayMobilePublicMultiMediaClient : IAopClient
+    public class AlipayMobilePublicMultiMediaClient
     {
 
         public const string APP_ID = "app_id";
@@ -100,7 +101,7 @@ namespace Aop.Api
         public T Execute<T>(IAopRequest<T> request, string accessToken, string appAuthToken) where T : AopResponse
         {
 
-            AlipayMobilePublicMultiMediaDownloadRequest multiMediaDownloadRequest = ((AlipayMobilePublicMultiMediaDownloadRequest)request);
+            AlipayMobilePublicMultiMediaDownloadRequest multiMediaDownloadRequest = request as AlipayMobilePublicMultiMediaDownloadRequest;
             // 添加协议级请求参数
             AopDictionary txtParams = new AopDictionary(request.GetParameters());
             txtParams.Add(METHOD, request.GetApiName());
@@ -120,7 +121,7 @@ namespace Aop.Api
             }
 
             // 添加签名参数
-            txtParams.Add(SIGN, AopUtils.SignAopRequest(txtParams, privateKeyPem, charset,signType));
+            txtParams.Add(SIGN, AopUtils.SignAopRequest(txtParams, privateKeyPem, charset, signType));
 
             Stream outStream = multiMediaDownloadRequest.stream;
             AopResponse rsp = DoGet(txtParams, outStream);
@@ -141,11 +142,11 @@ namespace Aop.Api
             {
                 if (url.Contains("?"))
                 {
-                    url = url + "&" + WebUtils.BuildQuery(parameters,charset);
+                    url = url + "&" + WebUtils.BuildQuery(parameters, charset);
                 }
                 else
                 {
-                    url = url + "?" + WebUtils.BuildQuery(parameters,charset);
+                    url = url + "?" + WebUtils.BuildQuery(parameters, charset);
                 }
             }
 
@@ -158,10 +159,13 @@ namespace Aop.Api
                 if (rsp.ContentType.ToLower().Contains("text/plain"))
                 {
                     Encoding encoding = Encoding.GetEncoding(rsp.CharacterSet);
-                    string body = webUtils.GetResponseAsString(rsp,encoding);
-                    IAopParser<AlipayMobilePublicMultiMediaDownloadResponse> tp = new AopJsonParser<AlipayMobilePublicMultiMediaDownloadResponse>();
-                    response = tp.Parse(body, charset);
-                }else{
+
+                    string body = webUtils.GetResponseAsString(rsp, encoding);
+
+                    response = JsonConvert.DeserializeObject<AlipayMobilePublicMultiMediaDownloadResponse>(body);
+                }
+                else
+                {
                     GetResponseAsStream(outStream, rsp);
                     response = new AlipayMobilePublicMultiMediaDownloadResponse();
                 }
@@ -193,8 +197,8 @@ namespace Aop.Api
                 //stream.CopyTo(outStream);
                 int length = Convert.ToInt32(rsp.ContentLength);
                 byte[] buffer = new byte[length];
-                int rc = 0; 
-                while ((rc=stream.Read(buffer, 0, length)) > 0)
+                int rc = 0;
+                while ((rc = stream.Read(buffer, 0, length)) > 0)
                 {
                     outStream.Write(buffer, 0, rc);
                 }

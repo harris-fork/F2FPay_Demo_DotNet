@@ -6,64 +6,38 @@ namespace Aop.Api
     [Serializable]
     public abstract class AopResponse
     {
-        private string code;
-        private string msg;
-        private string subCode;
-        private string subMsg;
-        private string body;
-
         /// <summary>
         /// 错误码
         /// 对应 ErrCode
         /// </summary>
         [XmlElement("code")]
-        public string Code
-        {
-            get { return code; }
-            set { code = value; }
-        }
+        public string Code { get; set; }
 
         /// <summary>
         /// 错误信息
         /// 对应 ErrMsg
         /// </summary>
         [XmlElement("msg")]
-        public string Msg
-        {
-            get { return msg; }
-            set { msg = value; }
-        }
+        public string Msg { get; set; }
 
         /// <summary>
         /// 子错误码
         /// 对应 SubErrCode
         /// </summary>
         [XmlElement("sub_code")]
-        public string SubCode
-        {
-            get { return subCode; }
-            set { subCode = value; }
-        }
+        public string SubCode { get; set; }
 
         /// <summary>
         /// 子错误信息
         /// 对应 SubErrMsg
         /// </summary>
         [XmlElement("sub_msg")]
-        public string SubMsg
-        {
-            get { return subMsg; }
-            set { subMsg = value; }
-        }
+        public string SubMsg { get; set; }
 
         /// <summary>
         /// 响应原始内容
         /// </summary>
-        public string Body
-        {
-            get { return body; }
-            set { body = value; }
-        }
+        public string Body { get; set; }
 
         /// <summary>
         /// 响应结果是否错误

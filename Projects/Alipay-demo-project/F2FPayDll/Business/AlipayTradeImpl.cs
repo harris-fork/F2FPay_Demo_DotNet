@@ -17,9 +17,9 @@ namespace Com.Alipay
     public class AlipayTradeService
     {
 
-  
 
-        IAopClient client = null; 
+
+        DefaultAopClient client = null;
 
         public AlipayTradeService(string serverUrl, string appId, string merchant_private_key, string format, string version,
      string sign_type, string alipay_public_key, string charset)
@@ -37,7 +37,7 @@ namespace Com.Alipay
         /// <param name="builder"></param>
         /// <returns></returns>
         public AlipayF2FPayResult tradePay(AlipayTradePayContentBuilder builder)
-        {               
+        {
             AlipayF2FPayResult payResult = new AlipayF2FPayResult();
             try
             {
@@ -45,7 +45,7 @@ namespace Com.Alipay
                 AlipayTradePayRequest payRequest = new AlipayTradePayRequest();
                 payRequest.BizContent = builder.BuildJson();
                 AlipayTradePayResponse payResponse = client.Execute(payRequest);
-                
+
                 //payRequest.SetBizModel("");
 
                 if (payResponse != null)
@@ -118,7 +118,7 @@ namespace Com.Alipay
                 }
                 //return payResult;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
                 AlipayTradePayResponse payResponse = new AlipayTradePayResponse();
@@ -135,7 +135,7 @@ namespace Com.Alipay
         /// <param name="outTradeNo"></param>
         /// <returns></returns>
         public AlipayF2FQueryResult tradeQuery(string outTradeNo)
-        {                
+        {
             AlipayF2FQueryResult result = new AlipayF2FQueryResult();
             try
             {
@@ -160,7 +160,7 @@ namespace Com.Alipay
         /// <param name="builder"></param>
         /// <returns></returns>
         public AlipayF2FRefundResult tradeRefund(AlipayTradeRefundContentBuilder builder)
-        {               
+        {
             AlipayF2FRefundResult refundResult = new AlipayF2FRefundResult();
             try
             {
@@ -183,15 +183,15 @@ namespace Com.Alipay
         /// <param name="builder"></param>
         /// <returns></returns>
         public AlipayF2FPrecreateResult tradePrecreate(AlipayTradePrecreateContentBuilder builder)
-        {               
+        {
             AlipayF2FPrecreateResult payResult = new AlipayF2FPrecreateResult();
             try
             {
 
                 AlipayTradePrecreateRequest payRequest = new AlipayTradePrecreateRequest();
                 payRequest.BizContent = builder.BuildJson();
-                
-                
+
+
                 payResult.response = client.Execute(payRequest);
                 return payResult;
             }
@@ -203,13 +203,13 @@ namespace Com.Alipay
         }
 
         public AlipayF2FPrecreateResult tradePrecreate(AlipayTradePrecreateContentBuilder builder, string notify_url)
-        {                
+        {
             AlipayF2FPrecreateResult payResult = new AlipayF2FPrecreateResult();
             try
             {
                 AlipayTradePrecreateRequest payRequest = new AlipayTradePrecreateRequest();
                 payRequest.BizContent = builder.BuildJson();
-                payRequest.SetNotifyUrl(notify_url);
+                payRequest.NotifyUrl = notify_url;
                 payResult.response = client.Execute(payRequest);
                 return payResult;
 

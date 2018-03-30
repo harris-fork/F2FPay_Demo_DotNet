@@ -27,7 +27,7 @@ namespace Aop.Api.Util
             Byte[] toEncryptArray = null;
 
             if (string.IsNullOrEmpty(charset))
-            {              
+            {
                 toEncryptArray = Encoding.UTF8.GetBytes(bizContent);
             }
             else

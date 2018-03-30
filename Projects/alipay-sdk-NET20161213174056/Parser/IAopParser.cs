@@ -8,13 +8,7 @@ namespace Aop.Api.Parser
     /// </summary>
     /// <typeparam name="T">领域对象</typeparam>
     public interface IAopParser<T> where T : AopResponse
-    {        
-        /// <summary>
-        /// 把响应字符串解释成相应的领域对象。
-        /// </summary>
-        /// <param name="body">响应字符串</param>
-        /// <returns>领域对象</returns>
-        T Parse(string body,string charset);
+    {
 
         /// <summary>
         /// 解析签名内容

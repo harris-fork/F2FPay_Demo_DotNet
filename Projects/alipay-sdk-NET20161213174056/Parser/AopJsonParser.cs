@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Xml.Serialization;
-using Jayrock.Json.Conversion;
 using Aop.Api.Request;
 using Aop.Api.Util;
+using Newtonsoft.Json;
 
 namespace Aop.Api.Parser
 {
@@ -17,45 +17,13 @@ namespace Aop.Api.Parser
         private static readonly Dictionary<string, Dictionary<string, AopAttribute>> attrs = new Dictionary<string, Dictionary<string, AopAttribute>>();
 
         #region IAopParser<T> Members
-        public T Parse(string body,string charset)
-        {
-            T rsp = null;
 
-            IDictionary json = JsonConvert.Import(body) as IDictionary;
-            if (json != null)
-            {
-                IDictionary data = null;
-
-                // 忽略根节点的名称
-                foreach (object key in json.Keys)
-                {
-                    data = json[key] as IDictionary;
-                    if (data != null && data.Count > 0)
-                    {
-                        break;
-                    }
-                }
-
-                if (data != null)
-                {
-                    IAopReader reader = new AopJsonReader(data);
-                    rsp = (T)AopJsonConvert(reader, typeof(T));
-                }
-            }
-
-            if (rsp == null)
-            {
-                rsp = Activator.CreateInstance<T>();
-            }
-
-            if (rsp != null)
-            {
-                rsp.Body = body;
-            }
-
-            return rsp;
-        }
-
+        /// <summary>
+        /// 解析签名内容
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="responseBody"></param>
+        /// <returns></returns>
         public SignItem GetSignItem(IAopRequest<T> request, string responseBody)
         {
             if (string.IsNullOrEmpty(responseBody))
@@ -139,7 +107,7 @@ namespace Aop.Api.Parser
             return tas;
         }
 
-        protected static readonly DAopConvert AopJsonConvert = delegate(IAopReader reader, Type type)
+        protected static readonly DAopConvert AopJsonConvert = delegate (IAopReader reader, Type type)
         {
             object rsp = null;
             Dictionary<string, AopAttribute> pas = GetAopAttributes(type);
@@ -205,7 +173,7 @@ namespace Aop.Api.Parser
 
         private static string GetSign(string body)
         {
-            IDictionary json = JsonConvert.Import(body) as IDictionary;
+            var json = JsonConvert.DeserializeObject<Dictionary<string, string>>(body);
             Console.WriteLine(json);
             return (string)json["sign"];
         }
@@ -246,6 +214,15 @@ namespace Aop.Api.Parser
             return body.Substring(signDataStartIndex, length);
         }
 
+        /// <summary>
+        /// 将响应串解密
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="body"></param>
+        /// <param name="encryptType"></param>
+        /// <param name="encryptKey"></param>
+        /// <param name="charset"></param>
+        /// <returns></returns>
         public string EncryptSourceData(IAopRequest<T> request, string body, string encryptType, string encryptKey, string charset)
         {
 

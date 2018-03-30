@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
-using Jayrock.Json.Conversion;
 
 namespace Aop.Api.Util
 {
@@ -168,11 +167,6 @@ namespace Aop.Api.Util
                 api = api.Substring(pos + 1).Replace('.', '_');
             }
             return api + "_response";
-        }
-
-        public static IDictionary ParseJson(string body)
-        {
-            return JsonConvert.Import(body) as IDictionary;
         }
     }
 }

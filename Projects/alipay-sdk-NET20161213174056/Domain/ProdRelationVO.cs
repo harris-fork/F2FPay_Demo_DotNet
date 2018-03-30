@@ -25,7 +25,6 @@ namespace Aop.Api.Domain
         /// 产品码
         /// </summary>
         [XmlElement("prod_code")]
-        public string ProdCode { get; set; }
 
         /// <summary>
         /// 关联的产品编码

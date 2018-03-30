@@ -67,7 +67,6 @@ namespace Aop.Api.Domain
         /// 废弃，使用蚂蚁开放平台应用中的网关地址
         /// </summary>
         [XmlElement("notify_url")]
-        public string NotifyUrl { get; set; }
 
         /// <summary>
         /// 外部订单号，需要唯一，由商户传入，芝麻内部会做幂等控制，格式为：yyyyMMddHHmmss+随机数

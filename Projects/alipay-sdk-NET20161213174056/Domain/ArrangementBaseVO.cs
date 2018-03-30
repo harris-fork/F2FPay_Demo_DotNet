@@ -127,7 +127,6 @@ namespace Aop.Api.Domain
         /// 产品编码
         /// </summary>
         [XmlElement("prod_code")]
-        public string ProdCode { get; set; }
 
         /// <summary>
         /// 产品名称

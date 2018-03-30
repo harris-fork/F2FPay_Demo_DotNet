@@ -59,6 +59,12 @@ namespace Aop.Api.Parser
             return rsp;
         }
 
+        /// <summary>
+        /// 解析签名内容
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="reponseBody"></param>
+        /// <returns></returns>
         public SignItem GetSignItem(IAopRequest<T> request, string reponseBody)
         {
 
@@ -151,6 +157,15 @@ namespace Aop.Api.Parser
             return body.Substring(signDataStartIndex, signDataEndIndex - signDataStartIndex);
         }
 
+        /// <summary>
+        /// 将响应串解密
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="body"></param>
+        /// <param name="encryptType"></param>
+        /// <param name="encryptKey"></param>
+        /// <param name="charset"></param>
+        /// <returns></returns>
         public string EncryptSourceData(IAopRequest<T> request, string body, string encryptType, string encryptKey, string charset)
         {
             EncryptParseItem item = ParseEncryptData(request, body);

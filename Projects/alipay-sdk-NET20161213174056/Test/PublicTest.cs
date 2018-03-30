@@ -4,7 +4,6 @@ using System.Text;
 using Aop.Api.Util;
 using Aop.Api.Request;
 using Aop.Api.Response;
-using Jayrock.Json;
 
 namespace Aop.Api.Test
 {
@@ -41,14 +40,14 @@ namespace Aop.Api.Test
 
         private static void MenuGet()
         {
-            IAopClient client = GetAlipayClient();
+            DefaultAopClient client = GetAlipayClient();
             //AlipayMobilePublicMenuGetRequest req = new AlipayMobilePublicMenuGetRequest();
             //AlipayMobilePublicMenuGetResponse res = client.Execute(req);
             System.Console.Write("-------------公众号菜单查询-------------" + "\n\r");
            // System.Console.Write("Body:" + res.Body + "\n\r");
         }
 
-        private static IAopClient GetAlipayClient()
+        private static DefaultAopClient GetAlipayClient()
         {
             //支付宝网关地址
             // -----沙箱地址-----
@@ -60,7 +59,7 @@ namespace Aop.Api.Test
             //商户私钥
             string privateKeyPem = GetCurrentPath() + "aop-sandbox-RSA-private-c#.pem";
 
-            IAopClient client = new DefaultAopClient(serverUrl, appId, privateKeyPem);
+            DefaultAopClient client = new DefaultAopClient(serverUrl, appId, privateKeyPem);
 
             return client;
         }
